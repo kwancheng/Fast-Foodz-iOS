@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ofr-1K-RZX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map List View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MapListViewController" customModule="Fast_Foodz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="LHi-eT-CGe">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rRd-M3-G1U">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyn-Nj-DVN">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="R7W-o6-utL">
+                                <rect key="frame" x="82" y="112" width="250" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="1tC-OD-Zjq"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Map"/>
+                                    <segment title="List"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rRd-M3-G1U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="3RF-By-o60"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="rRd-M3-G1U" secondAttribute="bottom" constant="-34" id="8GR-9c-EFa"/>
+                            <constraint firstItem="qyn-Nj-DVN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CFS-Ey-5vh"/>
+                            <constraint firstItem="LHi-eT-CGe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qcs-fh-k5c"/>
+                            <constraint firstItem="rRd-M3-G1U" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Uar-ba-qlW"/>
+                            <constraint firstItem="LHi-eT-CGe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WMZ-mo-bN3"/>
+                            <constraint firstItem="R7W-o6-utL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="WRz-ud-m9H"/>
+                            <constraint firstItem="qyn-Nj-DVN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-88" id="aBd-yP-aaR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rRd-M3-G1U" secondAttribute="trailing" constant="-20" id="jwY-iH-DfJ"/>
+                            <constraint firstAttribute="bottom" secondItem="qyn-Nj-DVN" secondAttribute="bottom" id="ml9-gi-kio"/>
+                            <constraint firstItem="qyn-Nj-DVN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ppB-Ny-F4A"/>
+                            <constraint firstItem="R7W-o6-utL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sUT-kN-RvL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MhQ-CT-lV2"/>
+                    <connections>
+                        <outlet property="loadIndicator" destination="LHi-eT-CGe" id="W3P-MT-zIu"/>
+                        <outlet property="mapListToggle" destination="R7W-o6-utL" id="tOZ-Pm-TMG"/>
+                        <outlet property="mapView" destination="rRd-M3-G1U" id="3wo-Mn-K8r"/>
+                        <outlet property="tableView" destination="qyn-Nj-DVN" id="U87-Zi-GmQ"/>
+                        <segue destination="Pfg-NG-l7v" kind="show" identifier="showDetails" id="xEs-HT-xlq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="115.84821428571428"/>
+        </scene>
+        <!--Business Detail View Controller-->
+        <scene sceneID="fdE-OJ-0nL">
+            <objects>
+                <viewController id="Pfg-NG-l7v" customClass="BusinessDetailViewController" customModule="Fast_Foodz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ygf-zg-yes">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="haG-7u-aC1">
+                                <rect key="frame" x="0.0" y="88" width="414" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="haG-7u-aC1" secondAttribute="height" multiplier="16:9" constant="14" id="CMR-Vl-5MY"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2U-pX-BaC">
+                                <rect key="frame" x="0.0" y="259" width="414" height="54"/>
+                                <color key="backgroundColor" red="0.21447943652849744" green="0.21447943652849744" blue="0.21447943652849744" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="mfY-Ej-bWk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="rect" keyPath="layoutMargins">
+                                        <rect key="value" x="0.0" y="0.0" width="300" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MTf-GD-3MA">
+                                <rect key="frame" x="16" y="329" width="382" height="463"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zt5-8Q-QB0">
+                                <rect key="frame" x="16" y="816" width="382" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="1R1-Ng-zst"/>
+                                </constraints>
+                                <state key="normal" title="Call Business"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onCallBusinessPressed:" destination="Pfg-NG-l7v" eventType="touchUpInside" id="YKu-2m-45P"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1Sx-FD-nWF" firstAttribute="trailing" secondItem="MTf-GD-3MA" secondAttribute="trailing" constant="16" id="0o3-9z-Hk6"/>
+                            <constraint firstItem="zt5-8Q-QB0" firstAttribute="top" secondItem="MTf-GD-3MA" secondAttribute="bottom" constant="24" id="3pt-Vz-bs8"/>
+                            <constraint firstItem="T2U-pX-BaC" firstAttribute="bottom" secondItem="haG-7u-aC1" secondAttribute="bottom" id="6Yi-kS-k1J"/>
+                            <constraint firstItem="MTf-GD-3MA" firstAttribute="leading" secondItem="1Sx-FD-nWF" secondAttribute="leading" constant="16" id="CDO-YV-tr0"/>
+                            <constraint firstItem="MTf-GD-3MA" firstAttribute="top" secondItem="haG-7u-aC1" secondAttribute="bottom" constant="16" id="J2f-Ij-9Op"/>
+                            <constraint firstItem="haG-7u-aC1" firstAttribute="leading" secondItem="Ygf-zg-yes" secondAttribute="leading" id="MKJ-ZP-OUf"/>
+                            <constraint firstItem="T2U-pX-BaC" firstAttribute="leading" secondItem="haG-7u-aC1" secondAttribute="leading" id="SVh-cM-lkr"/>
+                            <constraint firstItem="1Sx-FD-nWF" firstAttribute="trailing" secondItem="zt5-8Q-QB0" secondAttribute="trailing" constant="16" id="TCQ-q1-oPI"/>
+                            <constraint firstItem="1Sx-FD-nWF" firstAttribute="bottom" secondItem="zt5-8Q-QB0" secondAttribute="bottom" constant="-2" id="Vjf-T1-UmE"/>
+                            <constraint firstItem="zt5-8Q-QB0" firstAttribute="leading" secondItem="1Sx-FD-nWF" secondAttribute="leading" constant="16" id="cja-Is-HzA"/>
+                            <constraint firstItem="haG-7u-aC1" firstAttribute="trailing" secondItem="1Sx-FD-nWF" secondAttribute="trailing" id="dXI-IA-alg"/>
+                            <constraint firstItem="T2U-pX-BaC" firstAttribute="trailing" secondItem="haG-7u-aC1" secondAttribute="trailing" id="xK4-Q8-KX4"/>
+                            <constraint firstItem="haG-7u-aC1" firstAttribute="top" secondItem="1Sx-FD-nWF" secondAttribute="top" id="xfS-Bv-fCr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1Sx-FD-nWF"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hRQ-ys-SeO">
+                        <barButtonItem key="rightBarButtonItem" image="share" id="bNO-Kc-tMd">
+                            <connections>
+                                <action selector="onSharePressed:" destination="Pfg-NG-l7v" id="Wnr-Ft-Khm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="callButton" destination="zt5-8Q-QB0" id="LnI-MP-v9t"/>
+                        <outlet property="imageView" destination="haG-7u-aC1" id="c5d-3b-hMe"/>
+                        <outlet property="mapView" destination="MTf-GD-3MA" id="lID-zy-dNm"/>
+                        <outlet property="nameLabel" destination="T2U-pX-BaC" id="KVk-jT-4Ha"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ald-8d-kmc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1976.8115942028987" y="119.86607142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OCP-iY-a54">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ofr-1K-RZX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fSB-CU-NUE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="MUK-ZN-53Y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g0d-Nb-HBK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="share" width="32" height="32"/>
+    </resources>
+</document>

@@ -1,0 +1,6 @@
+framework module Pods_Fast_Foodz {
+  umbrella header "Pods-Fast Foodz-umbrella.h"
+
+  export *
+  module * { export * }
+}
